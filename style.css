@@ -1,0 +1,435 @@
+/* style.css */
+
+/* Configurações Globais e Tema Escuro */
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra de Navegação */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    background-color: #1e1e1e;
+    height: 60px;
+    border-bottom: 1px solid #333;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.navbar-brand i {
+    margin-right: 10px;
+}
+
+.navbar-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.navbar-links a:hover {
+    background-color: #333;
+}
+
+/* Conteúdo Principal */
+.main-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Títulos e Subtítulos */
+.title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #888888;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Layouts (Flexbox) */
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1440px; /* Largura máxima para telas grandes */
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos de Card/Container */
+.card {
+    border: 1px solid #444;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #1e1e1e;
+}
+
+/* Página Principal (index.html) */
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 100px); /* Altura da tela menos a navbar */
+    gap: 50px;
+}
+
+.profile-image img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.intro-text h2 {
+    font-size: 1.5em;
+    color: #888888;
+    margin: 0;
+}
+
+.intro-text h1 {
+    font-size: 2.5em;
+    color: #ffffff;
+    margin: 5px 0 20px 0;
+}
+
+.intro-text .info-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.info-row p {
+    color: #888888;
+    font-size: 1.1em;
+    width: 240px;
+    margin: 0;
+}
+
+.intro-text .email-contact {
+    margin-top: 20px;
+}
+
+.intro-text .email-contact p {
+    color: #888888;
+}
+
+.intro-text .email-contact a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Página de Formação (formacao.html) */
+.formation-card {
+    display: flex;
+    align-items: center;
+    width: 700px;
+    height: 150px;
+    gap: 20px;
+}
+
+.formation-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    object-fit: contain;
+}
+
+.formation-card .details {
+    display: flex;
+    flex-direction: column;
+}
+
+.details h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0 0 5px 0;
+}
+
+.details p {
+    font-size: 1em;
+    color: #888888;
+    margin: 2px 0;
+}
+
+/* Página de Repositório (repositorio.html) */
+.repo-card {
+    width: 290px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.repo-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.repo-card h3 {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.repo-card p {
+    font-size: 1em;
+    color: #888888;
+    margin: 0;
+}
+
+/* Página Sobre (sobre.html) */
+.about-card {
+    width: 700px;
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+.about-card h3 {
+    font-size: 1.5em;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.about-card p {
+    font-size: 1.1em;
+    color: #888;
+    text-align: justify;
+    line-height: 1.6;
+}
+.facts-list, .goals-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+.facts-list li, .goals-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    font-size: 1.05em;
+}
+.facts-list i, .goals-list i {
+    font-size: 1.2em;
+}
+
+/* Página de Contatos (contatos.html) */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-form {
+    width: 800px;
+}
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+.contact-form label {
+    display: block;
+    font-size: 1.2em;
+    color: #fff;
+    margin-bottom: 8px;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #121212;
+    border: 2px solid #444;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1em;
+}
+.contact-form textarea {
+    height: 120px;
+    resize: vertical;
+}
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+.contact-info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.contact-info-cards .row {
+    gap: 20px;
+}
+.contact-card {
+    width: 300px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.contact-card img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+.contact-card h4 {
+    color: #fff;
+    font-size: 1.2em;
+    margin: 0 0 5px 0;
+}
+.contact-card p {
+    color: #888;
+    margin: 0;
+}
+
+/* Página de Experiencia (experiencia.html) */
+.experience-card {
+    display: flex;
+    align-items: flex-start;
+    width: 900px;
+    gap: 25px;
+    padding: 25px;
+}
+
+.experience-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: contain;
+    margin-top: 5px;
+}
+
+.experience-card .details h3 {
+    margin-bottom: 8px;
+}
+
+.experience-card .company-info {
+    font-size: 1.1em;
+    color: #a0a0a0;
+    font-weight: 500;
+}
+
+.experience-card .date-location {
+    font-size: 0.95em;
+    color: #888;
+    margin-top: 4px;
+}
+
+.experience-card .description {
+    font-size: 1em;
+    color: #b0b0b0;
+    line-height: 1.6;
+    text-align: justify;
+    margin-top: 15px;
+}
+
+.skills {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.skills span {
+    background-color: #333;
+    color: #ccc;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9em;
+}
+
+.experience-card .description {
+    font-size: 1em;
+    color: #b0b0b0;
+    line-height: 1.6;
+    text-align: justify;
+    margin-top: 15px;
+    margin-bottom: 15px; 
+}
+
+/* Estilos para Cards de Repositório */
+.repo-card {
+    width: 320px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.repo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.repo-card img {
+    height: 180px; 
+}
+
+.repo-card h3 {
+    flex-grow: 0; 
+}
+
+.repo-card p {
+    flex-grow: 1; 
+    color: #a0a0a0;
+}
+
+.repo-card .skills {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-top: 10px;
+    border-top: 1px solid #333; 
+}
+
+.repo-card-link {
+    text-decoration: none;
+    color: inherit; 
+}
