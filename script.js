@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         const emailInput = document.getElementById('email');
         const emailError = document.getElementById('email-error');
-
         const validateEmail = () => {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(emailInput.value) && emailInput.value !== '') {
@@ -43,17 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 return true;
             }
         };
-
         emailInput.addEventListener('input', validateEmail);
-
         contactForm.addEventListener('submit', (e) => {
             if (!validateEmail()) {
-                e.preventDefault(); // Impede o envio se o e-mail for inválido
+                e.preventDefault();
                 alert('Por favor, corrija os erros no formulário antes de enviar.');
             }
         });
     }
-
 
     // --- LÓGICA PARA O MENU HAMBÚRGUER ---
     const hamburger = document.getElementById('hamburger-menu');
@@ -73,10 +69,29 @@ document.addEventListener('DOMContentLoaded', () => {
             overlay.classList.toggle('active');
         });
         overlay.addEventListener('click', closeMenu);
+        
+        // LÓGICA DE CLIQUE COM DIAGNÓSTICO
         navLinks.addEventListener('click', (e) => {
-            if (e.target.tagName === 'A') {
-                closeMenu();
+            console.log("1. Evento de clique no container dos links foi detectado.");
+
+            const link = e.target.closest('a');
+            if (!link) {
+                console.log("O clique não foi em um link. Ignorando.");
+                return;
             }
+
+            console.log("2. Clique foi em um link:", link.href);
+            e.preventDefault();
+            const destination = link.href;
+            
+            console.log("3. Função closeMenu() será chamada.");
+            closeMenu();
+            
+            console.log("4. Agendando redirecionamento para", destination, "em 400ms.");
+            setTimeout(() => {
+                console.log("5. Tempo esgotado! Redirecionando agora...");
+                window.location.href = destination;
+            }, 400); 
         });
     }
 
@@ -123,13 +138,9 @@ document.addEventListener('DOMContentLoaded', () => {
         function showImage(index) {
             const images = galleryImagesContainer.querySelectorAll('img');
             if (images.length === 0) return;
-            if (index >= images.length) {
-                currentIndex = 0;
-            } else if (index < 0) {
-                currentIndex = images.length - 1;
-            } else {
-                currentIndex = index;
-            }
+            if (index >= images.length) { currentIndex = 0; } 
+            else if (index < 0) { currentIndex = images.length - 1; } 
+            else { currentIndex = index; }
             images.forEach(img => img.classList.remove('active'));
             images[currentIndex].classList.add('active');
         }
@@ -150,15 +161,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 modal.classList.add('show');
             }
         });
+        const closeModal = () => modal.classList.remove('show');
         nextBtn.addEventListener('click', () => showImage(currentIndex + 1));
         prevBtn.addEventListener('click', () => showImage(currentIndex - 1));
-        const closeModal = () => modal.classList.remove('show');
         modalClose.addEventListener('click', closeModal);
         modal.addEventListener('click', (e) => {
             if (e.target === modal) closeModal();
         });
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
+            if (e.key === 'Escape' && modal.classList.contains('show')) {
+                closeModal();
+            }
         });
     }
 });

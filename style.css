@@ -1,25 +1,34 @@
 /* style.css */
 
-/* Configurações Globais e Tema Escuro */
+/* 1. TIPOGRAFIA E CONFIGURAÇÕES GLOBAIS */
 body {
-    background-color: #121212;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #e0e0e0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
+    background: #181818;
+    background-image: radial-gradient(at 20% 20%, hsla(216,45%,17%,1) 0px, transparent 50%), 
+                      radial-gradient(at 80% 80%, hsla(286,45%,17%,1) 0px, transparent 50%);
 }
 
-/* Barra de Navegação */
+h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 2. BARRA DE NAVEGAÇÃO */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
-    background-color: #1e1e1e;
     height: 60px;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(30, 30, 30, 0.5);
+    backdrop-filter: blur(4px);
+    position: sticky;
+    top: 0;
+    z-index: 1012; /* ELEVA A NAVBAR PARA A CAMADA MAIS ALTA */
 }
-
 .navbar-brand {
     display: flex;
     align-items: center;
@@ -27,11 +36,9 @@ body {
     text-decoration: none;
     font-size: 1.1em;
 }
-
 .navbar-brand i {
     margin-right: 10px;
 }
-
 .navbar-links a {
     color: #e0e0e0;
     text-decoration: none;
@@ -40,19 +47,15 @@ body {
     border-radius: 8px;
     transition: background-color 0.3s, color 0.3s;
 }
-
 .navbar-links a:hover {
     background-color: #333;
 }
-
-/* NOVO: Estilo para o link da página ativa */
 .navbar-links a.active-page {
-    color: #007bff;
+    color: #0d6efd;
     font-weight: bold;
 }
 
-
-/* Conteúdo Principal */
+/* 3. LAYOUT PRINCIPAL E TÍTULOS */
 .main-content {
     padding: 40px;
     display: flex;
@@ -60,26 +63,21 @@ body {
     align-items: center;
     width: 100%;
     box-sizing: border-box;
-    min-height: calc(100vh - 185px); /* Altura da tela menos navbar e footer */
+    min-height: calc(100vh - 185px);
 }
-
-/* Títulos e Subtítulos */
 .title {
-    font-size: 2.5em;
-    font-weight: bold;
+    font-size: 3em;
+    font-weight: 700;
     color: #ffffff;
     margin-bottom: 10px;
     text-align: center;
 }
-
 .subtitle {
     font-size: 1.2em;
     color: #888888;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     text-align: center;
 }
-
-/* Layouts (Flexbox) */
 .row {
     display: flex;
     justify-content: center;
@@ -88,22 +86,24 @@ body {
     width: 100%;
     max-width: 1440px;
 }
-
 .column {
     display: flex;
     flex-direction: column;
 }
 
-/* Estilos de Card/Container */
+/* 4. CARDS (NOVO DESIGN COM PROFUNDIDADE) */
 .card {
-    border: 1px solid #444;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    background: rgba(30, 30, 30, 0.5);
+    backdrop-filter: blur(4px);
     border-radius: 20px;
     padding: 20px;
     box-sizing: border-box;
-    background-color: #1e1e1e;
 }
 
-/* Página Principal (index.html) */
+/* 5. ESTILOS ESPECÍFICOS DE PÁGINAS */
+/* Página Principal */
 .home-container {
     display: flex;
     align-items: center;
@@ -111,279 +111,79 @@ body {
     flex-grow: 1;
     gap: 50px;
 }
-
 .profile-image img {
     width: 300px;
     height: 300px;
     border-radius: 50%;
     object-fit: cover;
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.3);
 }
-
-.intro-text h2 {
-    font-size: 1.5em;
-    color: #888888;
-    margin: 0;
-}
-
 .intro-text h1 {
-    font-size: 2.5em;
+    font-size: 3.5em;
     color: #ffffff;
     margin: 5px 0 20px 0;
 }
+/* ... (outros estilos de .intro-text, etc., permanecem) */
+.intro-text h2{font-size:1.5em;color:#888;margin:0}.intro-text .info-row{display:flex;align-items:center;gap:15px;margin-bottom:10px}.info-row p{color:#888;font-size:1.1em;width:240px;margin:0}.intro-text .email-contact{margin-top:20px}.intro-text .email-contact p{color:#888}.intro-text .email-contact a{color:#0d6efd;text-decoration:none}
 
-.intro-text .info-row {
+/* Página de Formação e Experiência */
+.formation-card, .experience-card {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 10px;
-}
-
-.info-row p {
-    color: #888888;
-    font-size: 1.1em;
-    width: 240px;
-    margin: 0;
-}
-
-.intro-text .email-contact {
-    margin-top: 20px;
-}
-
-.intro-text .email-contact p {
-    color: #888888;
-}
-
-.intro-text .email-contact a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-/* Página de Formação */
-.formation-card {
-    display: flex;
-    align-items: center;
+    gap: 25px;
     width: 700px;
     min-height: 170px;
-    gap: 20px;
 }
-.formation-card img {
+.experience-card {
+    width: 900px;
+}
+.formation-card img, .experience-card img {
     width: 100px;
     height: 100px;
     border-radius: 20px;
     object-fit: contain;
 }
-.formation-card .details, .experience-card .details {
-    display: flex;
-    flex-direction: column;
-}
 .details h3 {
-    font-size: 1.2em;
-    font-weight: bold;
+    font-size: 1.3em;
+    font-weight: 600;
     color: #ffffff;
     margin: 0 0 5px 0;
 }
 .details p {
     font-size: 1em;
-    color: #888888;
+    color: #a0a0a0;
     margin: 2px 0;
 }
+.experience-card .description{color:#b0b0b0;line-height:1.6;text-align:justify;margin-top:15px;margin-bottom:15px}
 
-/* Página Sobre */
-.about-card {
-    width: 700px;
-    padding: 20px;
-    border: 1px solid #444;
-    border-radius: 20px;
-    margin-bottom: 20px;
-}
-.about-card h3 {
-    font-size: 1.5em;
-    color: #fff;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-.about-card p {
-    font-size: 1.1em;
-    color: #888;
-    text-align: justify;
-    line-height: 1.6;
-}
-.facts-list, .goals-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 15px;
-}
-.facts-list li, .goals-list li {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 10px;
-    font-size: 1.05em;
-}
-.facts-list i, .goals-list i {
-    font-size: 1.2em;
-}
+/* ... (outros estilos de about-card, etc., permanecem) */
+.about-card{width:700px;padding:20px;margin-bottom:20px}.about-card h3{font-size:1.5em;color:#fff;font-weight:700;margin-bottom:15px}.about-card p{font-size:1.1em;color:#888;text-align:justify;line-height:1.6}.facts-list,.goals-list{list-style:none;padding:0;margin-top:15px}.facts-list li,.goals-list li{display:flex;align-items:center;gap:15px;margin-bottom:10px;font-size:1.05em}.facts-list i,.goals-list i{font-size:1.2em}
 
-/* Página de Contatos */
-.contact-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-.contact-form {
-    width: 800px;
-}
-.contact-form .form-group {
-    margin-bottom: 20px;
-    position: relative;
-}
-.contact-form label {
-    display: block;
-    font-size: 1.2em;
-    color: #fff;
-    margin-bottom: 8px;
-}
-.contact-form input, .contact-form textarea {
+/* Página de Repositório (NOVO GRID) */
+#project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
     width: 100%;
-    padding: 10px;
-    background-color: #121212;
-    border: 2px solid #444;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 1em;
+    max-width: 1440px;
 }
-.contact-form textarea {
-    height: 120px;
-    resize: vertical;
-}
-.contact-form button {
-    width: 100%;
-    padding: 12px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-.contact-form button:hover {
-    background-color: #0056b3;
-}
-.contact-info-cards {
+.repo-card {
+    width: 320px;
+    min-height: 500px; /* AUMENTADO DE 420px PARA 450px */
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: space-between; 
+    transition: transform 0.3s, box-shadow 0.3s;
 }
-.contact-info-cards .row {
-    gap: 20px;
-}
-.contact-card {
-    width: 300px;
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-.contact-card img {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 10px;
-}
-.contact-card h4 {
-    color: #fff;
-    font-size: 1.2em;
-    margin: 0 0 5px 0;
-}
-.contact-card p {
-    color: #888;
-    margin: 0;
-}
-
-/* NOVO: Estilos de Validação do Formulário */
-.error-message {
-    color: #ff5555;
-    font-size: 0.9em;
-    padding-top: 5px;
-}
-.contact-form input.invalid {
-    border-color: #ff5555;
-}
-
-
-/* Página de Experiência */
-.experience-card {
-    display: flex;
-    align-items: flex-start;
-    width: 900px;
-    gap: 25px;
-    padding: 25px;
-}
-.experience-card img {
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
-    object-fit: contain;
-    margin-top: 5px;
-}
-.experience-card .details h3 {
-    margin-bottom: 8px;
-}
-.experience-card .company-info {
-    font-size: 1.1em;
-    color: #a0a0a0;
-    font-weight: 500;
-}
-.experience-card .date-location {
-    font-size: 0.95em;
-    color: #888;
-    margin-top: 4px;
-}
-.experience-card .description {
-    font-size: 1em;
-    color: #b0b0b0;
-    line-height: 1.6;
-    text-align: justify;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-/* Tags de Competências */
-.skills {
-    margin-top: 15px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-.skills span {
-    background-color: #333;
-    color: #ccc;
-    padding: 5px 12px;
-    border-radius: 15px;
-    font-size: 0.9em;
-}
-
-/* Estilos para Cards de Repositório */
 .repo-card-link {
     text-decoration: none;
     color: inherit; 
     display: block;
     cursor: pointer;
 }
-.repo-card {
-    width: 320px;
-    min-height: 420px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.repo-card:hover {
+.repo-card-link:hover .repo-card {
     transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.5);
 }
 .repo-card img {
     width: 100%;
@@ -391,11 +191,14 @@ body {
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 15px;
+    transition: transform 0.4s ease;
+}
+.repo-card-link:hover .repo-card img {
+    transform: scale(1.05);
 }
 .repo-card h3 {
     flex-grow: 0;
     font-size: 1.3em;
-    font-weight: bold;
     margin: 0 0 10px 0;
 }
 .repo-card p {
@@ -404,55 +207,48 @@ body {
     font-size: 1em;
     margin: 0;
 }
+.formation-card .skills,
+.experience-card .skills,
 .repo-card .skills {
+    display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    padding-top: 10px;
-    border-top: 1px solid #333; 
+    justify-content: flex-start; /* Alinhado à esquerda para consistência */
+    align-items: center;
+    gap: 8px; /* Espaçamento consistente entre as tags */
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linha separadora */
 }
 
-/* Botão de Download CV */
+/* 6. COMPONENTES E UTILITÁRIOS */
+/* Tags de Competências */
+.skills span {
+    background-color: #333;
+    color: #ccc;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    white-space: normal; /* Permite que o texto dentro da tag quebre a linha */
+    word-break: break-word; /* Força a quebra de palavras longas se necessário */
+    text-align: justify; /* Centraliza o texto se ele quebrar em duas linhas */
+}
+
+/* Botões */
 .button-primary {
     display: inline-block;
-    background-color: #007bff;
+    background-color: #0d6efd;
     color: #fff;
     padding: 12px 25px;
     border-radius: 8px;
     text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
+    font-weight: 700;
+    transition: background-color 0.3s, box-shadow 0.3s;
     margin-top: 20px;
 }
 .button-primary:hover {
-    background-color: #0056b3;
+    background-color: #0b5ed7;
+    box-shadow: 0 0 15px rgba(13, 110, 253, 0.6);
 }
-
-/* Rodapé */
-.site-footer {
-    background-color: #1e1e1e;
-    color: #888;
-    padding: 20px 40px;
-    text-align: center;
-    border-top: 1px solid #333;
-}
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1440px;
-    margin: 0 auto;
-}
-.social-links a {
-    color: #888;
-    font-size: 1.5em;
-    margin: 0 10px;
-    transition: color 0.3s;
-}
-.social-links a:hover {
-    color: #fff;
-}
-
-/* NOVO: Estilos para Botão "Voltar ao Topo" */
 #back-to-top-btn {
     display: none;
     position: fixed;
@@ -462,7 +258,7 @@ body {
     font-size: 18px;
     border: none;
     outline: none;
-    background-color: #007bff;
+    background-color: #0d6efd;
     color: white;
     cursor: pointer;
     padding: 15px;
@@ -470,151 +266,21 @@ body {
     width: 50px;
     height: 50px;
     line-height: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 #back-to-top-btn:hover {
-    background-color: #0056b3;
+    background-color: #0b5ed7;
 }
 
-/* Estilos para Botões de Filtro */
-.filter-buttons {
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-.filter-buttons button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s;
-}
-.filter-buttons button:hover {
-    background-color: #555;
-}
-.filter-buttons button.active {
-    background-color: #007bff;
-}
+/* Formulário de Contato */
+/* ... (estilos do formulário permanecem os mesmos) ... */
+.contact-container{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}.contact-form{width:800px}.contact-form .form-group{margin-bottom:20px;position:relative}.contact-form label{display:block;font-size:1.2em;color:#fff;margin-bottom:8px}.contact-form input,.contact-form textarea{width:100%;padding:10px;background-color:#121212;border:2px solid #444;border-radius:5px;color:#fff;font-size:1em}.contact-form textarea{height:120px;resize:vertical}.contact-form button{width:100%;padding:12px;background-color:#0d6efd;color:#fff;border:none;border-radius:5px;font-size:1.1em;cursor:pointer;transition:background-color .3s}.contact-form button:hover{background-color:#0b5ed7}.contact-info-cards{display:flex;flex-direction:column;gap:20px}.contact-info-cards .row{gap:20px}.contact-card{width:300px;height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}.contact-card img{width:40px;height:40px;margin-bottom:10px}.contact-card h4{color:#fff;font-size:1.2em;margin:0 0 5px}.contact-card p{color:#888;margin:0}.error-message{color:#ff5555;font-size:.9em;padding-top:5px}.contact-form input.invalid{border-color:#ff5555}
 
-/* Estilos para esconder e mostrar cards */
-.repo-card-link {
-    transition: transform 0.4s, opacity 0.4s, width 0.4s, padding 0.4s, margin 0.4s;
-    transform: scale(1);
-    opacity: 1;
-}
-.repo-card-link.hide {
-    transform: scale(0.9);
-    opacity: 0;
-    font-size: 0;
-    padding: 0;
-    margin: 0;
-    width: 0;
-    border: none;
-}
+/* Filtros e Modal */
+/* ... (estilos de filtros e modal permanecem os mesmos) ... */
+.filter-buttons{margin-bottom:30px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.filter-buttons button{background-color:#333;color:#fff;border:none;padding:10px 20px;border-radius:20px;cursor:pointer;font-size:1em;transition:background-color .3s}.filter-buttons button:hover{background-color:#555}.filter-buttons button.active{background-color:#0d6efd}.repo-card-link{transition:transform .4s,opacity .4s,width .4s,padding .4s,margin .4s;transform:scale(1);opacity:1}.repo-card-link.hide{transform:scale(.9);opacity:0;font-size:0;padding:0;margin:0;width:0;border:none}.modal{position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.7);display:none;justify-content:center;align-items:center;opacity:0;transition:opacity .4s}.modal.show{display:flex;opacity:1}.modal-content{background-color:rgba(30,30,30,0.8);backdrop-filter:blur(5px);padding:30px;border-radius:20px;width:90%;max-width:800px;position:relative;border:1px solid rgba(255,255,255,0.1);text-align:center}.modal-close{position:absolute;top:15px;right:25px;color:#aaa;font-size:28px;font-weight:700;cursor:pointer}.modal-close:hover{color:#fff}.modal-content h2{color:#fff;margin-top:0}.modal-content p{color:#aaa;line-height:1.6;text-align:justify}.modal-gallery-container{position:relative;width:100%;margin-bottom:20px}.modal-gallery-images img{width:100%;max-height:400px;object-fit:cover;border-radius:15px;display:none;animation:fadeIn .5s}.modal-gallery-images img.active{display:block}@keyframes fadeIn{from{opacity:.4}to{opacity:1}}.modal-gallery-prev,.modal-gallery-next{cursor:pointer;position:absolute;top:50%;width:auto;padding:16px;margin-top:-22px;color:#fff;font-weight:700;font-size:20px;transition:.3s ease;border-radius:0 3px 3px 0;-webkit-user-select:none;user-select:none;background-color:rgba(0,0,0,.3);border:none}.modal-gallery-next{right:0;border-radius:3px 0 0 3px}.modal-gallery-prev{left:0;border-radius:0 3px 3px 0}.modal-gallery-prev:hover,.modal-gallery-next:hover{background-color:rgba(0,0,0,.8)}
 
-/* Estilos do Modal */
-.modal {
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.4s;
-}
-.modal.show {
-    display: flex;
-    opacity: 1;
-}
-.modal-content {
-    background-color: #1e1e1e;
-    padding: 30px;
-    border-radius: 20px;
-    width: 90%;
-    max-width: 800px;
-    position: relative;
-    border: 1px solid #444;
-    text-align: center;
-}
-.modal-close {
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-.modal-close:hover {
-    color: #fff;
-}
-.modal-content h2 {
-    color: #fff;
-    margin-top: 0;
-}
-.modal-content p {
-    color: #aaa;
-    line-height: 1.6;
-    text-align: justify;
-}
-.modal-gallery-container {
-    position: relative;
-    width: 100%;
-    margin-bottom: 20px;
-}
-.modal-gallery-images img {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 15px;
-    display: none;
-    animation: fadeIn 0.5s;
-}
-.modal-gallery-images img.active {
-    display: block;
-}
-@keyframes fadeIn {
-  from { opacity: .4 } 
-  to { opacity: 1 }
-}
-.modal-gallery-prev, .modal-gallery-next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    transition: 0.3s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    background-color: rgba(0, 0, 0, 0.3);
-    border: none;
-}
-.modal-gallery-next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-.modal-gallery-prev {
-    left: 0;
-    border-radius: 0 3px 3px 0;
-}
-.modal-gallery-prev:hover, .modal-gallery-next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Estilos do Botão Hambúrguer */
+/* 7. MENU HAMBÚRGUER E RESPONSIVIDADE */
 .hamburger-menu {
     display: none;
     flex-direction: column;
@@ -649,7 +315,6 @@ body {
     display: block;
 }
 
-/* Media Queries para Responsividade */
 @media (max-width: 768px) {
     body {
         font-size: 14px;
@@ -677,6 +342,8 @@ body {
         gap: 0;
         transition: right 0.4s ease-in-out;
         z-index: 1010;
+        backdrop-filter: blur(5px);
+        background: rgba(30,30,30,0.8);
     }
     .navbar-links a {
         display: block;
