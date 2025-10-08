@@ -7,6 +7,7 @@
     <title>Experiência Profissional</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
 
@@ -14,7 +15,12 @@
         <a href="mailto:theolimaff@gmail.com" class="navbar-brand">
             <i class="fas fa-envelope"></i> theolimaff@gmail.com
         </a>
-        <div class="navbar-links">
+        <button class="hamburger-menu" id="hamburger-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <div class="navbar-links" id="navbar-links">
             <a href="index.html">Início</a>
             <a href="sobre.html">Sobre</a>
             <a href="formacao.html">Formação</a>
@@ -29,7 +35,7 @@
         <p class="subtitle">Minha trajetória e contribuições no mercado de trabalho</p>
         
         <div class="column" style="gap: 20px;">
-            <div class="card experience-card">
+            <div class="card experience-card" data-aos="fade-up">
                 <img src="https://media.licdn.com/dms/image/v2/D4D0BAQHtJkqnzHt0sg/company-logo_100_100/company-logo_100_100/0/1707399252270/hpe_automores_do_brasil_ltda_logo?e=1762387200&v=beta&t=3tFXJ0LAkhiay5ZeCIzTabcNl9f7Fbji8lR8QKAPATs" alt="Logo HPE Automotores">
                 <div class="details">
                     <h3>Estágiário de Engenharia de Produtos</h3>
@@ -49,7 +55,7 @@
                 </div>
             </div>
 
-            <div class="card experience-card">
+            <div class="card experience-card" data-aos="fade-up" data-aos-delay="100">
                 <img src="https://media.licdn.com/dms/image/v2/C4D0BAQFKhO2f3-RNEA/company-logo_100_100/company-logo_100_100/0/1630548475463/corteva_logo?e=1762387200&v=beta&t=5r9Il6j9F3ijXN73r0yAs75HadH9708tpexekSLJW2U" alt="Logo Corteva Agriscience">
                 <div class="details">
                     <h3>Aprendiz de Assistente Administrativo</h3>
@@ -81,5 +87,10 @@
         </div>
     </footer>
 
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, once: true });
+    </script>
 </body>
 </html>

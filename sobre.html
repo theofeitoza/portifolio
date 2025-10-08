@@ -7,13 +7,19 @@
     <title>Sobre Mim</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <nav class="navbar">
         <a href="mailto:theolimaff@gmail.com" class="navbar-brand">
             <i class="fas fa-envelope"></i> theolimaff@gmail.com
         </a>
-        <div class="navbar-links">
+        <button class="hamburger-menu" id="hamburger-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <div class="navbar-links" id="navbar-links">
             <a href="index.html">Início</a>
             <a href="sobre.html">Sobre</a>
             <a href="formacao.html">Formação</a>
@@ -28,12 +34,12 @@
         <p class="subtitle">Conheça minhas experiencias, metas e interesses</p>
 
         <div class="row">
-            <div class="about-card" style="text-align: center;">
+            <div class="about-card" style="text-align: center;" data-aos="fade-up">
                 <h3>Introdução</h3>
                 <p>Théo, um jovem de 22 anos imerso na engenharia mecatrônica, dedica-se aos estudos nessa área inovadora que combina mecânica, eletrônica e automação. Sua paixão por desafios técnicos e soluções criativas é evidente, especialmente em Python. Buscando aplicar seus conhecimentos em projetos inovadores, ele combina compreensão teórica sólida com uma mentalidade prática. Em seu tempo livre, explora novas tecnologias e tendências em mecatrônica e programação, compartilhando sua empolgação para inspirar e contribuir positivamente para o campo.</p>
                 <a href="seu-curriculo.pdf" download class="button-primary">Baixar meu CV</a>
             </div>
-            <div class="about-card">
+            <div class="about-card" data-aos="fade-up" data-aos-delay="100">
                 <h3>Fatos</h3>
                 <p>Estes são alguns fatos sobre mim:</p>
                 <ul class="facts-list">
@@ -46,7 +52,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="about-card">
+            <div class="about-card" data-aos="fade-up">
                 <h3>Metas</h3>
                 <p>Já se passaram alguns anos desde que entrei no espaço tecnológico. Tendo alcançado marcos significativos, estou agora dedicado a seguir essas metas:</p>
                 <ul class="goals-list">
@@ -56,7 +62,7 @@
                     <li><i class="fas fa-home" style="color: yellow;"></i> Trabalhar para aplicar o aprendizado</li>
                 </ul>
             </div>
-            <div class="about-card">
+            <div class="about-card" data-aos="fade-up" data-aos-delay="100">
                 <h3>Interesses</h3>
                 <p>Deixe me contar alguns de meus interesses:</p>
                 <ul class="goals-list">
@@ -78,5 +84,11 @@
             </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, once: true });
+    </script>
 </body>
 </html>

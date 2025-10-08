@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Théo Lima Fernandes Feitoza, um desenvolvedor Python e estudante de Engenharia Mecatrônica com foco em automação e desenvolvimento de software.">
+    <title>Teste de Menu - Portfólio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        /* INÍCIO DO ARQUIVO STYLE.CSS COMPLETO */
+
+        /* Configurações Globais e Tema Escuro */
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Barra de Navegação */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            background-color: #1e1e1e;
+            height: 60px;
+            border-bottom: 1px solid #333;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        .navbar-brand i {
+            margin-right: 10px;
+        }
+
+        .navbar-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar-links a:hover {
+            background-color: #333;
+        }
+
+        /* Conteúdo Principal */
+        .main-content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            min-height: calc(100vh - 185px);
+        }
+
+        /* Títulos e Subtítulos */
+        .title {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        /* Estilos do Botão Hambúrguer */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1011;
+        }
+        .hamburger-menu .bar {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1009;
+            display: none;
+        }
+        .overlay.active {
+            display: block;
+        }
+
+        /* Rodapé */
+        .site-footer {
+            background-color: #1e1e1e;
+            color: #888;
+            padding: 20px 40px;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+        .social-links a {
+            color: #888;
+            font-size: 1.5em;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #fff;
+        }
+
+        /* Media Queries para Responsividade */
+        @media (max-width: 768px) {
+            .navbar {
+                justify-content: space-between;
+            }
+            .hamburger-menu {
+                display: flex;
+            }
+            .navbar-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: #1e1e1e;
+                flex-direction: column; 
+                align-items: stretch;
+                justify-content: flex-start;
+                padding-top: 100px;
+                gap: 0;
+                transition: right 0.4s ease-in-out;
+                z-index: 1010;
+            }
+
+            .navbar-links a {
+                padding: 20px 0;
+                width: 100%;
+                text-align: center;
+                font-size: 1.2em;
+                border-bottom: 1px solid #333;
+                margin: 0;
+                border-radius: 0;
+            }
+
+            .navbar-links a:first-child {
+                border-top: 1px solid #333;
+            }
+
+            .navbar-links.active {
+                right: 0;
+            }
+            .hamburger-menu.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            .hamburger-menu.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger-menu.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            .footer-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        /* FIM DO CSS RELEVANTE PARA O MENU */
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="mailto:theolimaff@gmail.com" class="navbar-brand">
+            <i class="fas fa-envelope"></i> theolimaff@gmail.com
+        </a>
+        <button class="hamburger-menu" id="hamburger-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <div class="navbar-links" id="navbar-links">
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="formacao.html">Formação</a>
+            <a href="experiencia.html">Experiência</a>
+            <a href="repositorio.html">Repositório</a>
+            <a href="contatos.html">Contatos</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <h1 class="title">Página de Teste</h1>
+        <p class="subtitle">Diminua a janela do navegador para testar o menu.</p>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© 2025 Théo Lima Fernandes Feitoza. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/theofeitoza/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/theofeitoza" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // INÍCIO DO ARQUIVO SCRIPT.JS COMPLETO
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- LÓGICA PARA O MENU HAMBÚRGUER ---
+            const hamburger = document.getElementById('hamburger-menu');
+            const navLinks = document.getElementById('navbar-links');
+
+            if (hamburger && navLinks) {
+                const overlay = document.createElement('div');
+                overlay.className = 'overlay';
+                document.body.appendChild(overlay);
+
+                hamburger.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    hamburger.classList.toggle('active');
+                    overlay.classList.toggle('active');
+                });
+
+                const closeMenu = () => {
+                    navLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    overlay.classList.remove('active');
+                };
+
+                overlay.addEventListener('click', closeMenu);
+                navLinks.addEventListener('click', (e) => {
+                    if (e.target.tagName === 'A') {
+                        closeMenu();
+                    }
+                });
+            }
+        });
+        // FIM DO SCRIPT.JS
+    </script>
+</body>
+</html>

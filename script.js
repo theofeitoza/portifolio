@@ -1,5 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- LÓGICA PARA O MENU HAMBÚRGUER ---
+    const hamburger = document.getElementById('hamburger-menu');
+    const navLinks = document.getElementById('navbar-links');
+
+    if (hamburger && navLinks) {
+        // Cria um overlay para escurecer o fundo
+        const overlay = document.createElement('div');
+        overlay.className = 'overlay';
+        document.body.appendChild(overlay);
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+
+        // Fecha o menu se um link for clicado ou se o overlay for clicado
+        const closeMenu = () => {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+            overlay.classList.remove('active');
+        };
+
+        overlay.addEventListener('click', closeMenu);
+        navLinks.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                closeMenu();
+            }
+        });
+    }
+
     // --- LÓGICA PARA FILTRAGEM DE PROJETOS ---
     const filterButtons = document.querySelectorAll('.filter-buttons button');
     const projectCards = document.querySelectorAll('#project-grid .repo-card-link');
@@ -45,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function showImage(index) {
             const images = galleryImagesContainer.querySelectorAll('img');
+            if (images.length === 0) return;
             if (index >= images.length) {
                 currentIndex = 0;
             } else if (index < 0) {
@@ -84,7 +116,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target === modal) closeModal();
         });
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
+            if (e.key === 'Escape' && modal.classList.contains('show')) {
+                closeModal();
+            }
         });
     }
 });
