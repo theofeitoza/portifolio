@@ -1,28 +1,77 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- NÍVEL 1: INDICAÇÃO DE PÁGINA ATIVA NO MENU ---
+    const currentPagePath = window.location.pathname.split("/").pop();
+    const navLinksList = document.querySelectorAll('#navbar-links a');
+    navLinksList.forEach(link => {
+        const linkPath = link.getAttribute('href');
+        if (linkPath === currentPagePath || (currentPagePath === '' && linkPath === 'index.html')) {
+            link.classList.add('active-page');
+        }
+    });
+
+    // --- NÍVEL 1: BOTÃO "VOLTAR AO TOPO" ---
+    const backToTopButton = document.getElementById('back-to-top-btn');
+    if (backToTopButton) {
+        window.onscroll = () => {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // --- NÍVEL 1: VALIDAÇÃO DO FORMULÁRIO DE CONTATO ---
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        const emailInput = document.getElementById('email');
+        const emailError = document.getElementById('email-error');
+
+        const validateEmail = () => {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value) && emailInput.value !== '') {
+                emailError.textContent = 'Por favor, insira um formato de e-mail válido.';
+                emailInput.classList.add('invalid');
+                return false;
+            } else {
+                emailError.textContent = '';
+                emailInput.classList.remove('invalid');
+                return true;
+            }
+        };
+
+        emailInput.addEventListener('input', validateEmail);
+
+        contactForm.addEventListener('submit', (e) => {
+            if (!validateEmail()) {
+                e.preventDefault(); // Impede o envio se o e-mail for inválido
+                alert('Por favor, corrija os erros no formulário antes de enviar.');
+            }
+        });
+    }
+
+
     // --- LÓGICA PARA O MENU HAMBÚRGUER ---
     const hamburger = document.getElementById('hamburger-menu');
     const navLinks = document.getElementById('navbar-links');
-
     if (hamburger && navLinks) {
-        // Cria um overlay para escurecer o fundo
         const overlay = document.createElement('div');
         overlay.className = 'overlay';
         document.body.appendChild(overlay);
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-            overlay.classList.toggle('active');
-        });
-
-        // Fecha o menu se um link for clicado ou se o overlay for clicado
         const closeMenu = () => {
             navLinks.classList.remove('active');
             hamburger.classList.remove('active');
             overlay.classList.remove('active');
         };
-
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
         overlay.addEventListener('click', closeMenu);
         navLinks.addEventListener('click', (e) => {
             if (e.target.tagName === 'A') {
@@ -34,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- LÓGICA PARA FILTRAGEM DE PROJETOS ---
     const filterButtons = document.querySelectorAll('.filter-buttons button');
     const projectCards = document.querySelectorAll('#project-grid .repo-card-link');
-
     if (filterButtons.length > 0 && projectCards.length > 0) {
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
@@ -70,10 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const modalLink = document.getElementById('modal-link');
         const prevBtn = document.querySelector('.modal-gallery-prev');
         const nextBtn = document.querySelector('.modal-gallery-next');
-
         let currentImages = [];
         let currentIndex = 0;
-
         function showImage(index) {
             const images = galleryImagesContainer.querySelectorAll('img');
             if (images.length === 0) return;
@@ -87,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
             images.forEach(img => img.classList.remove('active'));
             images[currentIndex].classList.add('active');
         }
-
         projectGrid.addEventListener('click', (e) => {
             const card = e.target.closest('.repo-card-link');
             if (card) {
@@ -105,20 +150,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 modal.classList.add('show');
             }
         });
-
         nextBtn.addEventListener('click', () => showImage(currentIndex + 1));
         prevBtn.addEventListener('click', () => showImage(currentIndex - 1));
-
         const closeModal = () => modal.classList.remove('show');
-
         modalClose.addEventListener('click', closeModal);
         modal.addEventListener('click', (e) => {
             if (e.target === modal) closeModal();
         });
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('show')) {
-                closeModal();
-            }
+            if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
         });
     }
 });
