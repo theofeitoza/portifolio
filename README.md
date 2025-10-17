@@ -57,6 +57,7 @@ Uso
 Clone o repositório:
 
 Bash
+
 ❯ git clone https://github.com/theofeitoza/portifolio.git
 Navegue até o diretório do projeto:
 
