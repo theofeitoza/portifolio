@@ -5,7 +5,7 @@
 PORTFÓLIO PESSOAL
 Um espaço pessoal para apresentar minhas habilidades, projetos e jornada na tecnologia.
 
-<img alt="last-commit" src="https://img.shields.io/github/last-commit/SEU_USUARIO/SEU_REPOSITORIO?style=flat&logo=git&logoColor=white&color=0080ff"> <img alt="repo-top-language" src="https://img.shields.io/github/languages/top/SEU_USUARIO/SEU_REPOSITORIO?style=flat&color=0080ff"> <img alt="repo-language-count" src="https://img.shields.io/github/languages/count/SEU_USUARIO/SEU_REPOSITORIO?style=flat&color=0080ff">
+<img alt="last-commit" src="https://img.shields.io/github/last-commit/SEU_USUARIO/SEU_REPOSITORIO?style=flat&logo=git&logoColor=white&color=0080ff"> <img alt="repo-top-language" src="https://img.shields.io/github/languages/top/theofeitoza/portifolio?style=flat&color=0080ff"> <img alt="repo-language-count" src="https://img.shields.io/github/languages/count/theofeitoza/portifolio?style=flat&color=0080ff">
 
 <p><em>Construído com as seguintes tecnologias:</em></p> <img alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26.svg?style=flat&logo=HTML5&logoColor=white"> <img alt="CSS3" src="https://img.shields.io/badge/CSS3-1572B6.svg?style=flat&logo=CSS3&logoColor=white"> <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=flat&logo=JavaScript&logoColor=black">
 
@@ -57,14 +57,12 @@ Uso
 Clone o repositório:
 
 Bash
-
-# SUBSTITUA "SEU_USUARIO" E "SEU_REPOSITORIO" ABAIXO
-❯ git clone https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git
+❯ git clone https://github.com/theofeitoza/portifolio.git
 Navegue até o diretório do projeto:
 
 Bash
 
-❯ cd SEU_REPOSITORIO
+❯ cd portifolio
 Abra o arquivo principal no seu navegador:
 
 Abra o arquivo index.html diretamente no seu navegador de preferência para ver o site em ação.
