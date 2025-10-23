@@ -23,6 +23,7 @@
 ## 📜 Índice
 
 - [Visão Geral](#-visão-geral)
+- [Telas do Site](#-telas-do-site)
 - [Como Começar](#-como-começar)
   - [Pré-requisitos](#pré-requisitos)
   - [Uso](#uso)
@@ -44,6 +45,24 @@ Este site foi criado para oferecer uma visão completa e interativa do meu perfi
 -   📂 **Repositórios:** Uma galeria com links para meus principais projetos no GitHub.
 -   📞 **Contato:** Meios para entrar em contato comigo profissionalmente.
 -   📄 **Currículo para Download:** Acesso fácil a uma versão em PDF do meu currículo completo.
+
+---
+
+## 🖼️ Telas do Site
+
+<p align="center">
+  <strong>Página Inicial</strong><br>
+  <img src="inicio.JPG" alt="Página Inicial do Portfólio" width="80%">
+</p>
+<br>
+<p align="center">
+  <img src="sobre.JPG" alt="Seção Sobre Mim" width="48%">
+  <img src="experiencia.JPG" alt="Seção de Experiência" width="48%">
+</p>
+<p align="center">
+  <img src="formacao.JPG" alt="Seção de Formação" width="48%">
+  <img src="contatos.JPG" alt="Seção de Contatos" width="48%">
+</p>
 
 ---
 
