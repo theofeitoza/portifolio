@@ -52,7 +52,8 @@ Este site foi criado para oferecer uma visão completa e interativa do meu perfi
 
 <p align="center">
   <strong>Página Inicial</strong><br>
-  <img src="inicio.JPG" alt="Página Inicial do Portfólio" width="80%">
+  <img src="inicio.JPG" alt="Página Inicial do Portfólio" width="48%">
+  <img src="repositorio.JPG" alt="Seção de Repositório" width="48%">
 </p>
 <br>
 <p align="center">
