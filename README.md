@@ -13,12 +13,10 @@ Um espaço pessoal para apresentar minhas habilidades, projetos e jornada na tec
 
 📜 Índice
 Visão Geral
-
-Como Começar
-
-Pré-requisitos
-
-Uso
+-[Visão Geral](#Visão-Geral)
+-[Como Começar](#Como-comecar)
+-[Pré-requisitos](#Pré-requisitos)
+-[Uso](#Uso)
 
 <hr>
 
