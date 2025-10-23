@@ -25,6 +25,7 @@ Visão Geral
 <hr>
 
 🚀 Visão Geral
+
 Este projeto é o meu portfólio pessoal, um site estático desenvolvido para servir como um cartão de visitas digital. Ele centraliza minha trajetória profissional, acadêmica e meus projetos mais relevantes, demonstrando minhas habilidades em desenvolvimento web front-end.
 
 Por que este portfólio?
