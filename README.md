@@ -23,7 +23,7 @@
 ## 📜 Índice
 
 - [Visão Geral](#-visão-geral)
-- [Telas do Site](#-telas-do-site)
+- [Telas do Site](#-Telas-Do-Site)
 - [Como Começar](#-como-começar)
   - [Pré-requisitos](#pré-requisitos)
   - [Uso](#uso)
